@@ -60,13 +60,34 @@ public class LinkedList<K> {
         }
         return null;
     }
+    public INode deleteNodeWithKey(int key) {
+
+        INode nodeWithKeyValue = search(int key);
+
+        if(nodeWithKeyValue != null) {
+
+            INode temporaryNode = head;
+            while (temporaryNode!=null && temporaryNode.getNext() != nodeWithKeyValue) {
+                temporaryNode = temporaryNode.getNext();
+            }
+            temporaryNode.setNext(nodeWithKeyValue.getNext());
+            return nodeWithKeyValue;
+
+        }
+        else {
+            System.out.println("Key Node Found");
+            return null;
+        }
+    }
 
     public void printMyNodes() {
+
         System.out.println("My nodes are: " + head);
     }
 
     @Override
     public String toString() {
+
         return "MyLinkedListNodes{ " + head + " }";
     }
 }

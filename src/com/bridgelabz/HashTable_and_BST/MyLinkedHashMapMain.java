@@ -5,7 +5,8 @@ public class MyLinkedHashMapMain {
 
         System.out.println("----- Welcome To Data Structure: Linked HashMap -----");
 
-        String sentence = "Paranoids are not paranoid because they are paranoid but because they keep putting themselves deliberately into paranoid avoidable situations”";
+
+        String sentence = "Paranoids are not paranoid because they are paranoid but because they keep putting themselves deliberately into paranoid avoidable situations";
         MyLinkedHashMap<String, Integer> myLinkedHashMap = new MyLinkedHashMap<>();
         String[] words = sentence.toLowerCase().split(" ");
 
@@ -17,11 +18,17 @@ public class MyLinkedHashMapMain {
                 value = value+1;
             myLinkedHashMap.add(word, value);
         }
+        System.out.println();
         System.out.println(myLinkedHashMap);
-
+        System.out.println();
         for (String word:words) {
             int frequency = myLinkedHashMap.get(word);
             System.out.println("Frequency of "+word+" : "+frequency);
         }
+        System.out.println();
+        System.out.println("Deleting Avoidable : ");
+        myLinkedHashMap.remove("avoidable");
+        System.out.println(myLinkedHashMap);
     }
+
 }
